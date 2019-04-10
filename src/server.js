@@ -16,7 +16,7 @@ io.on('connection', socket => {
     });
 });
 
-mongoose.connect('mongodb+srv://boxer:CbIu0j0ckpsapLyV@boxer-m3v3o.mongodb.net/test?retryWrites=true', { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://boxer:${process.env.PASSWORD}@boxer-m3v3o.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true });
 
 app.use((req, res, next) => {
     req.io = io;
